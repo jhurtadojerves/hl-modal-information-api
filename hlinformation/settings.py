@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$#@&!vi!=$!lw=bcv)dife$iek#=qx*fp6%9r7s#*m4y_59u9*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,7 +118,19 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+# LOGIN urls
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+import dj_database_url
+DATABASES = {'default': dj_database_url.config()}
