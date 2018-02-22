@@ -1,1 +1,1 @@
-web: gunicorn hechizos.wsgi --log-file -
+web: gunicorn hlinformation.wsgi --log-file -
