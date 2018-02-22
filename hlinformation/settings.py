@@ -116,11 +116,37 @@ USE_L10N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     'google.com',
     'harrylatino.org',
     'www.harrylatino.org',
+)
+
+CSRF_TRUSTED_ORIGINS = (
+    'google.com',
+    'harrylatino.org',
+    'www.harrylatino.org',
+)
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 )
 
 # LOGIN urls
